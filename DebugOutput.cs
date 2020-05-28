@@ -1,0 +1,30 @@
+﻿namespace E_Menu_Personel_App
+{
+    using System;
+    using System.Text;
+    using System.IO;
+    using System.Windows.Controls;
+    public class DebugOutput : TextWriter
+    {
+        TextBox textBox = null;
+
+        public DebugOutput(TextBox output)
+        {
+            textBox = output;
+        }
+
+        public override void Write(char value)
+        {
+            base.Write(value);
+            textBox.Dispatcher.BeginInvoke(new Action(() =>
+            {
+                textBox.AppendText(value.ToString());
+            }));
+        }
+
+        public override Encoding Encoding
+        {
+            get { return System.Text.Encoding.UTF8; }
+        }
+    }
+}

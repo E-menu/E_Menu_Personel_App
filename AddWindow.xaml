@@ -1,0 +1,57 @@
+﻿<Window x:Class="E_Menu_Personel_App.AddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:E_Menu_Personel_App"
+        mc:Ignorable="d"
+        Title="AddWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <!--Row 1-->
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Table_info"/>
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="Dish_Name"/>
+        <TextBlock Grid.Row="1" Grid.Column="3" Text="Dish_price"/>
+        
+        <!--Row 2-->
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="TableInfoBox"/>
+        <TextBox Grid.Row="2" Grid.Column="2" x:Name="DishNameBox"/>
+        <TextBox Grid.Row="2" Grid.Column="3" x:Name="DishPriceBox"/>
+        
+        <!--Row 3-->
+        <Button Grid.Row="3" Grid.Column="1" x:Name="ButtonTb" Content="Add Table" 
+                    Foreground="White" FontSize="25" Height="60" 
+                    Width="180" Margin="10,10,10,10" Background="#FF3F4646" 
+                    BorderBrush="#FF871987" Click="Add_Table_Click" Cursor="Hand"/>
+        <Button Grid.Row="3" Grid.Column="2" x:Name="ButtonDs" Content="Add Dish" 
+                    Foreground="White" FontSize="25" Height="60" 
+                    Width="180" Margin="10,10,10,10" Background="#FF3F4646" 
+                    BorderBrush="#FF871987" Click="Add_Dish_Click" Cursor="Hand"/>
+        <!--Row 4-->
+        <ComboBox Grid.Row="4" Grid.Column="1" x:Name="tableSelect" Height="30" Width="400" FontSize="20" 
+                  Foreground="Black" BorderBrush="#FF152B2B" ItemsSource="{Binding Table.TableID}" Cursor="Hand"/>
+        
+        <ComboBox Grid.Row="4" Grid.Column="2" x:Name="dishSelect" Height="30" Width="400" FontSize="20" 
+                  Foreground="Black" BorderBrush="#FF152B2B" ItemsSource="{Binding Dish.Name}" Cursor="Hand"/>
+        <!--Row 5-->
+        <Button Grid.Row="5" Grid.Column="1" x:Name="OrderButton" Content="Add Order" 
+                    Foreground="White" FontSize="25" Height="60" Grid.ColumnSpan="2"
+                    Width="180" Margin="10,10,10,10" Background="#FF3F4646" 
+                    BorderBrush="#FF871987" Click="Add_Order_Click" Cursor="Hand"/>
+    </Grid>
+</Window>
