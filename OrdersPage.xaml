@@ -14,34 +14,39 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition/>
+            <RowDefinition />
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
-        <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="5"
+        <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="5"
                 BorderThickness="0.5" BorderBrush="White"/>
 
 
         <!--Row 1-->
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="Stolik numer 1" 
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Stolik numer 1" Grid.ColumnSpan="2"
                    FontSize="32" Foreground="White" HorizontalAlignment="Center"/>
-        <Border Grid.Row="1" Grid.Column="1" BorderThickness="0.5" BorderBrush="White"/>
-        <TextBlock Grid.Row="1" Grid.Column="2" Text="Stolik numer 2" 
+        <Border Grid.Row="1" Grid.Column="1" BorderThickness="0.5" Grid.ColumnSpan="2" BorderBrush="White"/>
+        <TextBlock Grid.Row="1" Grid.Column="3" Text="Stolik numer 2" Grid.ColumnSpan="2"
                    FontSize="32" Foreground="White" HorizontalAlignment="Center"/>
-        <Border Grid.Row="1" Grid.Column="2" BorderThickness="0.5" BorderBrush="White"/>
-        <TextBlock Grid.Row="1" Grid.Column="3" Text="Stolik numer 3" 
+        <Border Grid.Row="1" Grid.Column="3" BorderThickness="0.5" BorderBrush="White" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="1" Grid.Column="5" Text="Stolik numer 3" Grid.ColumnSpan="2"
                    FontSize="32" Foreground="White" HorizontalAlignment="Center"/>
-        <Border Grid.Row="1" Grid.Column="3" BorderThickness="0.5" BorderBrush="White"/>
+        <Border Grid.Row="1" Grid.Column="5" BorderThickness="0.5" BorderBrush="White" Grid.ColumnSpan="2"/>
         <!--Row 2-->
         <DataGrid x:Name="Stolik1" Foreground="White" RowBackground="Transparent" 
                   Background="Transparent" FontSize="18" AutoGenerateColumns="False" 
-                   HorizontalAlignment="Center" BorderBrush="#FF8B8B8B" 
+                   HorizontalAlignment="Center" BorderBrush="#FF8B8B8B" Grid.ColumnSpan="2"
                   CanUserResizeColumns="False" CanUserReorderColumns="False" 
                   CanUserResizeRows="False" IsReadOnly="True" Grid.Row="2" Grid.Column="1">
             <DataGrid.Columns>
@@ -118,9 +123,9 @@
         </DataGrid>
         <DataGrid x:Name="Stolik2" Foreground="White" RowBackground="Transparent" 
                   Background="Transparent" FontSize="18" AutoGenerateColumns="False" 
-                   HorizontalAlignment="Center" BorderBrush="#FF8B8B8B" 
-                  CanUserResizeColumns="False" CanUserReorderColumns="False" 
-                  CanUserResizeRows="False" IsReadOnly="True" Grid.Row="2" Grid.Column="2">
+                   HorizontalAlignment="Center" BorderBrush="#FF8B8B8B" Grid.ColumnSpan="2"
+                  CanUserResizeColumns="False" CanUserReorderColumns="False"
+                  CanUserResizeRows="False" IsReadOnly="True" Grid.Row="2" Grid.Column="3">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nazwa" Width="auto" MinWidth="200" 
                                     Binding="{Binding Path=Name}">
@@ -195,9 +200,9 @@
         </DataGrid>
         <DataGrid x:Name="Stolik3" Foreground="White" RowBackground="Transparent" 
                   Background="Transparent" FontSize="18" AutoGenerateColumns="False" 
-                   HorizontalAlignment="Center" BorderBrush="#FF8B8B8B" 
+                   HorizontalAlignment="Center" BorderBrush="#FF8B8B8B" Grid.ColumnSpan="2"
                   CanUserResizeColumns="False" CanUserReorderColumns="False" 
-                  CanUserResizeRows="False" IsReadOnly="True" Grid.Row="2" Grid.Column="3">
+                  CanUserResizeRows="False" IsReadOnly="True" Grid.Row="2" Grid.Column="5">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nazwa" Width="auto" MinWidth="200" 
                                     Binding="{Binding Path=Name}">
@@ -272,22 +277,41 @@
         </DataGrid>
 
         <!--Row 3-->
-        <TextBlock Grid.Row="3" Grid.Column="1" Text="Stolik numer 4" 
-                   FontSize="32" Foreground="White" HorizontalAlignment="Center"/>
-        <Border Grid.Row="3" Grid.Column="1" BorderThickness="0.5" BorderBrush="White"/>
-        <TextBlock Grid.Row="3" Grid.Column="2" Text="Stolik numer 5" 
-                   FontSize="32" Foreground="White" HorizontalAlignment="Center"/>
-        <Border Grid.Row="3" Grid.Column="2" BorderThickness="0.5" BorderBrush="White"/>
-        <TextBlock Grid.Row="3" Grid.Column="3" Text="Stolik numer 6" 
-                   FontSize="32" Foreground="White" HorizontalAlignment="Center"/>
-        <Border Grid.Row="3" Grid.Column="3" BorderThickness="0.5" BorderBrush="White"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="Suma zamówienia: " HorizontalAlignment="Right"
+                   FontSize="32" Foreground="White" IsEnabled="False" />
+        <Label Grid.Row="3" Grid.Column="2" x:Name="TablePrice1" HorizontalAlignment="Left"
+                   FontSize="30" Foreground="White" IsEnabled="False" />
+        <Border Grid.Row="3" Grid.Column="1" BorderThickness="0.5" BorderBrush="White" Grid.ColumnSpan="2"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="3" Text="Suma zamówienia: " HorizontalAlignment="Right"
+                   FontSize="32" Foreground="White" IsEnabled="False" />
+        <Label Grid.Row="3" Grid.Column="4" x:Name="TablePrice2" HorizontalAlignment="Left"
+                   FontSize="30" Foreground="White" IsEnabled="False" />
+        <Border Grid.Row="3" Grid.Column="3" BorderThickness="0.5" BorderBrush="White" Grid.ColumnSpan="2"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="5" Text="Suma zamówienia: " HorizontalAlignment="Right"
+                   FontSize="32" Foreground="White" IsEnabled="False" />
+        <Label Grid.Row="3" Grid.Column="6" x:Name="TablePrice3" HorizontalAlignment="Left"
+                   FontSize="30" Foreground="White" IsEnabled="False" />
+        <Border Grid.Row="3" Grid.Column="5" BorderThickness="0.5" BorderBrush="White" Grid.ColumnSpan="2"/>
         
         <!--Row 4-->
+        <TextBlock Grid.Row="4" Grid.Column="1" Text="Stolik numer 4" Grid.ColumnSpan="2"
+                   FontSize="32" Foreground="White" HorizontalAlignment="Center"/>
+        <Border Grid.Row="4" Grid.Column="1" BorderThickness="0.5" BorderBrush="White" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="4" Grid.Column="3" Text="Stolik numer 5" Grid.ColumnSpan="2"
+                   FontSize="32" Foreground="White" HorizontalAlignment="Center"/>
+        <Border Grid.Row="4" Grid.Column="3" BorderThickness="0.5" BorderBrush="White" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="4" Grid.Column="5" Text="Stolik numer 6" Grid.ColumnSpan="2"
+                   FontSize="32" Foreground="White" HorizontalAlignment="Center"/>
+        <Border Grid.Row="4" Grid.Column="5" BorderThickness="0.5" BorderBrush="White" Grid.ColumnSpan="2"/>
+               
+        <!--Row 5-->
         <DataGrid x:Name="Stolik4" Foreground="White" RowBackground="Transparent" 
                   Background="Transparent" FontSize="18" AutoGenerateColumns="False" 
-                   HorizontalAlignment="Center" BorderBrush="#FF8B8B8B" 
+                   HorizontalAlignment="Center" BorderBrush="#FF8B8B8B" Grid.ColumnSpan="2"
                   CanUserResizeColumns="False" CanUserReorderColumns="False" 
-                  CanUserResizeRows="False" IsReadOnly="True" Grid.Row="4" Grid.Column="1">
+                  CanUserResizeRows="False" IsReadOnly="True" Grid.Row="5" Grid.Column="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nazwa" Width="auto" MinWidth="200" 
                                     Binding="{Binding Path=Name}">
@@ -362,9 +386,9 @@
         </DataGrid>
         <DataGrid x:Name="Stolik5" Foreground="White" RowBackground="Transparent" 
                   Background="Transparent" FontSize="18" AutoGenerateColumns="False" 
-                   HorizontalAlignment="Center" BorderBrush="#FF8B8B8B" 
+                   HorizontalAlignment="Center" BorderBrush="#FF8B8B8B" Grid.ColumnSpan="2"
                   CanUserResizeColumns="False" CanUserReorderColumns="False" 
-                  CanUserResizeRows="False" IsReadOnly="True" Grid.Row="4" Grid.Column="2">
+                  CanUserResizeRows="False" IsReadOnly="True" Grid.Row="5" Grid.Column="3">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nazwa" Width="auto" MinWidth="200" 
                                     Binding="{Binding Path=Name}">
@@ -439,9 +463,9 @@
         </DataGrid>
         <DataGrid x:Name="Stolik6" Foreground="White" RowBackground="Transparent" 
                   Background="Transparent" FontSize="18" AutoGenerateColumns="False" 
-                   HorizontalAlignment="Center" BorderBrush="#FF8B8B8B" 
+                   HorizontalAlignment="Center" BorderBrush="#FF8B8B8B" Grid.ColumnSpan="2"
                   CanUserResizeColumns="False" CanUserReorderColumns="False" 
-                  CanUserResizeRows="False" IsReadOnly="True" Grid.Row="4" Grid.Column="3">
+                  CanUserResizeRows="False" IsReadOnly="True" Grid.Row="5" Grid.Column="5">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nazwa" Width="auto" MinWidth="200" 
                                     Binding="{Binding Path=Name}">
@@ -514,5 +538,24 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+
+        <!--Row 6-->
+        <TextBlock Grid.Row="6" Grid.Column="1" Text="Suma zamówienia: " HorizontalAlignment="Right"
+                   FontSize="32" Foreground="White" IsEnabled="False" />
+        <Label Grid.Row="6" Grid.Column="2" x:Name="TablePrice4" HorizontalAlignment="Left"
+                   FontSize="30" Foreground="White" IsEnabled="False" />
+        <Border Grid.Row="6" Grid.Column="1" BorderThickness="0.5" BorderBrush="White" Grid.ColumnSpan="2"/>
+
+        <TextBlock Grid.Row="6" Grid.Column="3" Text="Suma zamówienia: " HorizontalAlignment="Right"
+                   FontSize="32" Foreground="White" IsEnabled="False" />
+        <Label Grid.Row="6" Grid.Column="4" x:Name="TablePrice5" HorizontalAlignment="Left"
+                   FontSize="30" Foreground="White" IsEnabled="False" />
+        <Border Grid.Row="6" Grid.Column="3" BorderThickness="0.5" BorderBrush="White" Grid.ColumnSpan="2"/>
+
+        <TextBlock Grid.Row="6" Grid.Column="5" Text="Suma zamówienia: " HorizontalAlignment="Right"
+                   FontSize="32" Foreground="White" IsEnabled="False" />
+        <Label Grid.Row="6" Grid.Column="6" x:Name="TablePrice6" HorizontalAlignment="Left"
+                   FontSize="30" Foreground="White" IsEnabled="False" />
+        <Border Grid.Row="6" Grid.Column="5" BorderThickness="0.5" BorderBrush="White" Grid.ColumnSpan="2"/>
     </Grid>
 </Page>

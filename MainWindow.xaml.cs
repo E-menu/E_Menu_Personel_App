@@ -10,14 +10,14 @@
     /// </summary>    
     public partial class MainWindow : Window
     {       
-        DebugOutput outputter;
+        //DebugOutput outputter;
         public MainWindow()
         {
             InitializeComponent();
-            
+
             //---------Debug----------
-            outputter = new DebugOutput(DebugBox);
-            Console.SetOut(outputter);
+            //outputter = new DebugOutput(DebugBox);
+            //Console.SetOut(outputter);
             Console.WriteLine("Started");
             //-----------------------------------            
         }

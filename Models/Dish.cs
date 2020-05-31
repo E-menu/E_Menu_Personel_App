@@ -18,6 +18,6 @@
         /// <summary>
         /// Store price of dish
         /// </summary>
-        public int DishPrice { get; set; }
+        public double DishPrice { get; set; }
     }
 }

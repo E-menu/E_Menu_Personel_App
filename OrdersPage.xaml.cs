@@ -29,6 +29,7 @@
             IOrderedEnumerable<OrderDish>[] query = new IOrderedEnumerable<OrderDish>[tableCount+1];
             IEnumerable<String> TimeQuery;
             IEnumerable<int> IDQuery;
+            double[] TablePrice = new double[tableCount+1];
             for (int table_number = 1; table_number <= tableCount; table_number++)
             {
                 dishesInt = orderRepo.GetDishes(table_number);
@@ -43,6 +44,7 @@
                         DishPrice = dishes1[foreach_iter].DishPrice,
                         Name = dishes1[foreach_iter].Name
                     };
+                    TablePrice[table_number] += dishes1[foreach_iter].DishPrice;
                     foreach_iter++;
                 }
 
@@ -76,6 +78,12 @@
                     .ThenBy(n => n.Name);
             }
 
+            TablePrice1.Content = TablePrice[1];
+            TablePrice2.Content = TablePrice[2];
+            TablePrice3.Content = TablePrice[3];
+            TablePrice4.Content = TablePrice[4];
+            TablePrice5.Content = TablePrice[5];
+            TablePrice6.Content = TablePrice[6];
             Stolik1.ItemsSource = query[1];
             Stolik2.ItemsSource = query[2];
             Stolik3.ItemsSource = query[3];
@@ -133,7 +141,7 @@
         {
             public string Name { get; set; }
 
-            public int? DishPrice { set; get; }
+            public double? DishPrice { set; get; }
 
             public string TimeStamp { set; get; }
 

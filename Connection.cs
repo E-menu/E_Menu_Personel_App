@@ -8,6 +8,7 @@ namespace E_Menu_Personel_App
     using E_Menu_Personel_App.Interfaces;
     using E_Menu_Personel_App.Repositories;
     using E_Menu_Personel_App.Models;
+    using System.Globalization;
 
     public class Connection
     {
@@ -26,10 +27,10 @@ namespace E_Menu_Personel_App
             {
                 order = new Order();
                 dish = new Dish();
-                Console.WriteLine(x);
                 string[] element = x.Split(",");
+                Console.WriteLine(element[1]);
                 dish.Name = element[0];
-                dish.DishPrice = Convert.ToInt32(element[1]);
+                dish.DishPrice = Double.Parse(element[1], CultureInfo.InvariantCulture.NumberFormat);
                 var ID = repoDish.CheckDish(dish);
                 if (ID == 0)
                 {

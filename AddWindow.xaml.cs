@@ -17,7 +17,6 @@
         {
             InitializeComponent();
 
-
             ITableRepository repoTable = new TableRepository();
             var tableNames = repoTable.GetTables();            
             string[] tables = new string[tableNames.Length];

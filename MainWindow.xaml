@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:E_Menu_Personel_App"
-        mc:Ignorable="d" Title="Easy Bistro V1.1"  Loaded="Connect_Server"       
-        Width="1920" Height="1080" WindowState="Maximized" WindowStyle="None">
+        mc:Ignorable="d" Title="Easy Bistro V2.0"  Loaded="Connect_Server"       
+       Width="1920" Height="1080" WindowState="Maximized" WindowStyle="None">
         <!--Width="800" Height="700">-->
+    
     
     
 
@@ -94,7 +95,7 @@
 
         <!--Row 1-->
         <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3"
-                   Text="Easy Bistro V1.1" FontSize="50" 
+                   Text="Easy Bistro V2.0" FontSize="50" 
                    FontWeight="Bold" Foreground="White" 
                    HorizontalAlignment="Center" />
 
@@ -129,7 +130,7 @@
         </Button>
 
         <!--Row 3-->
-        <Button Grid.Row="3" Grid.Column="1" x:Name="ButtonTb" Content="Add Table/Dish" 
+        <Button Grid.Row="3" Grid.Column="1" x:Name="ButtonTb" Content="Add Dish/Order" 
                     Foreground="White" FontSize="25" Height="60" 
                     Width="180" Margin="10,10,10,10" Background="#FF3F4646" 
                     BorderBrush="#FF871987" Click="Click_Add" Cursor="Hand"/>
@@ -143,8 +144,7 @@
 
         <!--Row 5-->
         <!--           DEBUG BOX            -->
-        <TextBox Grid.Row="5" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="4" MinWidth="400" 
-                 x:Name="DebugBox" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <!--<TextBox Grid.Row="5" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="4" MinWidth="400" x:Name="DebugBox" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>-->
         <!--           DEBUG BOX            -->
 
     </Grid>
